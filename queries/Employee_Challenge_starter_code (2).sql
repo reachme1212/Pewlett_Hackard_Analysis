@@ -7,7 +7,7 @@
 
 DROP TABLE
 
---module did not ask to filter to_date hence made as follows 
+
 
 SELECT e.emp_no,e.first_name,
 e.last_name,t.title,e.birth_date,t.from_date,t.to_date
@@ -18,17 +18,28 @@ WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
 --AND (t.to_date = '9999-01-01')
 ORDER BY e.emp_no;
 
+--retirement_titles have duplicates
+
 select * from retirement_titles
 
 ---2.exported retirement_titles.csv 
 
+--Filter the data on the birth_date column to retrieve the 
+---employees who were born between 1952 and 1955. Then, 
 
+--Sort the Unique Titles table in ascending order by the employee number and 
+--descending order by the last date (i.e. to_date) of the most recent title.
 
 SELECT DISTINCT ON (emp_no) emp_no, first_name,
 last_name,title,birth_date,from_date,to_date
 INTO unique_titles
 FROM retirement_titles
-ORDER BY emp_no, from_date DESC;
+ORDER BY emp_no ,to_date DESC;
+
+--unique_titles do not have dupliacte , 
+--but Have employees info  who left the company 
+--module did not ask to filter to_date to only make current employees
+
 
 select * from unique_titles
 
@@ -78,6 +89,11 @@ ORDER BY emp_no, from_date DESC;
 
 select * from mentorship_eligibilty_clean
 
+SELECT COUNT(emp_no),title
+INTO mentorship_eligibilty_count
+FROM mentorship_eligibilty_clean
+GROUP BY title
+ORDER BY count desc;
 
 --two additional queries or tables
 --Query to find all current employees born between 
@@ -103,7 +119,9 @@ ORDER BY e.emp_no ,t.from_date DESC;
 select * from baby_boomer_list
 
 SELECT COUNT(emp_no), title
---INTO baby_boomer_count
+INTO baby_boomer_count
 FROM baby_boomer_list 
 GROUP BY title
 ORDER BY count desc;
+
+select * from baby_boomer_count
