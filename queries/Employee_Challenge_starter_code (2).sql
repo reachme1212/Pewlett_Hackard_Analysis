@@ -7,8 +7,6 @@
 
 DROP TABLE
 
-
-
 SELECT e.emp_no,e.first_name,
 e.last_name,t.title,e.birth_date,t.from_date,t.to_date
 INTO retirement_titles
@@ -45,6 +43,15 @@ select * from unique_titles
 
 ---3.exported unique_titles.csv
 
+--from unique_titles employees who left the company 17940
+SELECT emp_no, first_name,
+last_name,title,birth_date,from_date,to_date
+INTO employee_left
+FROM unique_titles
+WHERE (to_date!='9999-01-01')
+
+SELECT * FROM employee_left
+
 ---4.exported  retiring_titles_count.csv
 
 SELECT COUNT(emp_no),title
@@ -63,7 +70,6 @@ select * from retiring_titles_count
 --6.7.join primary keys for tables employee,dept_emp and titles
 ---8.Filter the data on the to_date column order by emp no
 
-drop table 
 
 SELECT e.emp_no,e.first_name,
 e.last_name,e.birth_date,de.from_date,de.to_date,t.title
