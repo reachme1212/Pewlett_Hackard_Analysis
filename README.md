@@ -38,7 +38,7 @@ January 1, 1965 and December 31, 1965 are eligible to enter the "Mentorship Prog
 
 All relevant CSV files and images are in resource folder , “Pewlett_Hackard (PH)” should start hiring based on the baby_boomer_count table as that has the current employee information who will be eligible for retirement in near future.
 
-The company should also start the "Mentorship Program" there are 1549 epmloyees eligible for the program, however the company have not decided how many employees can actually enter the program.
+The company should also start the "Mentorship Program" there are 1549 employees eligible for the program, however the company have not decided how many employees can actually enter the program.
 
 The company should decide on the budget and requirements for the Mentorship Program.
 
