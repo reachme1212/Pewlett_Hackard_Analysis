@@ -32,10 +32,13 @@ January 1, 1965 and December 31, 1965 are eligible to enter the "Mentorship Prog
 
 6. I have created a table to show the count of employees who will retire and their title
 
-![retirement_titles](resources/output5.PNG)
+![retirement_titles](resources/ouput5.PNG)
 
 **Summary:**
 
 All relevant CSV files and images are in resource folder , “Pewlett_Hackard (PH)” should start hiring based on the baby_boomer_count table as that has the current employee information who will be eligible for retirement in near future.
 
-The company should start the "Mentorship Program" there are 1549 epmloyees eligible for the program. The company should decide on the budget and how many employees can actually join the programs and the requirement information.
+The company should also start the "Mentorship Program" there are 1549 epmloyees eligible for the program, however the company have not decided how many employees can actually enter the program.
+
+The company should decide on the budget and requirements for the Mentorship Program.
+
